@@ -35,7 +35,7 @@ Ao longo do curso, serão abordados os seguintes tópicos:
 ## 📌 Créditos
 
 Curso realizado pela **[BFD Softex](https://moodle.softexpe.org.br/)**
-Repositório mantido por: **[Anderson Costa Rodrigues - Turma 01-RJ-C1]**
+Repositório mantido por: **Anderson Costa Rodrigues - Turma 01-RJ-C1**
 
 ---
 
