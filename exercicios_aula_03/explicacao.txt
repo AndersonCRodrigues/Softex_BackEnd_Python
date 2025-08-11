@@ -1,0 +1,67 @@
+---
+
+## 🔍 **1. O que é `in`?**
+
+`in` serve para **perguntar se algo está dentro de outra coisa**.
+No caso das **strings** (textos), usamos para ver se uma letra ou palavra está presente dentro de outra.
+
+💡 Pense assim: é como perguntar *"tem isso aqui dentro?"*.
+
+**Exemplo:**
+
+```python
+"a" in "casa"   # Verdadeiro, pois "a" está dentro de "casa"
+"x" in "casa"   # Falso, pois "x" não aparece em "casa"
+"ca" in "casa"  # Verdadeiro, pois "ca" aparece no começo de "casa"
+```
+
+---
+
+## 📏 **2. O que é `len()`?**
+
+`len()` serve para **contar quantos caracteres tem** uma string (quantas letras, números, espaços, etc.).
+
+💡 É como pegar uma régua e medir o comprimento de um texto.
+
+**Exemplo:**
+
+```python
+len("casa")     # 4 (tem 4 letras)
+len("olá")      # 3 (o "á" conta como uma letra)
+len("bom dia")  # 7 (os espaços também contam)
+```
+
+---
+
+## 🔢 **3. O que é índice na string?**
+
+O **índice** é a **posição** de cada letra dentro da string.
+No Python (e na maioria das linguagens), a contagem começa no **0**, não no 1.
+
+💡 É como colocar um número embaixo de cada letra para saber onde ela está.
+
+**Exemplo:**
+
+```
+Texto:   p   y   t   h   o   n
+Índice:  0   1   2   3   4   5
+```
+
+Para pegar uma letra, usamos o **colchete** `[]` com o número da posição:
+
+```python
+palavra = "python"
+print(palavra[0])  # p
+print(palavra[2])  # t
+print(palavra[5])  # n
+```
+
+---
+
+💡 Resumindo:
+
+* **`in`** → pergunta: *"Está dentro?"*
+* **`len()`** → conta quantos caracteres tem
+* **índice** → posição da letra dentro do texto (começa no 0)
+
+---

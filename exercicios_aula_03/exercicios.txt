@@ -1,0 +1,26 @@
+1. Verificar letra na palavra
+Peça ao usuário uma palavra e depois uma letra. Informe se a letra está na palavra.
+
+2. Senha mínima
+Solicite uma senha e verifique se ela tem pelo menos 8 caracteres usando len().
+
+3. Palavra proibida
+Peça uma frase e verifique se a palavra "bomba" aparece nela.
+
+4. Login simples com validação dupla
+Peça usuário e senha.
+O login só é aceito se o usuário contiver "admin" (in) e a senha tiver no mínimo 6 caracteres (len()).
+
+5. Contador de caracteres e verificação de letra
+Peça uma palavra e mostre:
+Quantos caracteres ela tem (len())
+Se "a" está nela (in)
+
+6. Peça ao usuario para entrar com uma palavra
+- Ela tem que começar com "P".
+- Ela tem que terminar com "S".
+- A palavra deve conter a letra "I" em qualquer posição.
+- A palavra NÃO deve conter "M" nem "N".
+- Ela deve ter no mínimo 3 caracteres.
+- A palavra deve ser toda em minusculo.
+- O programa deve executar até que as condições sejam atendidas.
