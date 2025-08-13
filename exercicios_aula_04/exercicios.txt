@@ -1,0 +1,78 @@
+1 – Comparando nomes ignorando maiúsculas
+Peça dois nomes e verifique se são iguais usando .lower().
+Se forem iguais, mostre "Nomes iguais", senão "Nomes diferentes".
+2 – Conferindo início de palavra
+Peça uma palavra e verifique com .startswith() se ela começa com "py".
+Mostre "Começa com py" ou "Não começa com py".
+3 – Limpeza de entrada
+Peça um texto com espaços no começo e no fim.
+Use .strip() para limpar e depois mostre o texto limpo.
+
+4 – Título formatado
+Peça uma frase e use .title() para mostrar com todas as palavras começando em maiúscula.
+5 – Substituindo palavras
+Peça uma frase e uma palavra a substituir.
+Depois peça a nova palavra e use .replace() para fazer a troca.
+6 – Contagem de letra específica
+Peça um texto e uma letra.
+Mostre quantas vezes essa letra aparece usando .count().
+7 – Verificação de número
+Peça algo ao usuário e use .isdigit() para verificar se ele digitou apenas números.
+8 – Senha com validação de letras e/ou números
+Peça uma senha e verifique com .isalnum() se ela contém apenas letras e/ou números.
+Se for válido, mostre "Senha válida", senão "Senha inválida".
+9 – Palavra proibida com while
+Enquanto o usuário digitar algo que contenha a palavra "spoiler" (use .lower() e in), peça para digitar novamente.
+
+10 – Centralizando texto
+Peça um texto e um número.
+Use .center() para centralizar o texto nesse tamanho usando * como preenchimento.
+
+11 – Validador de Senha Forte
+Peça uma senha e valide que ela tenha:
+
+pelo menos 8 caracteres
+
+pelo menos 1 letra maiúscula
+
+pelo menos 1 letra minúscula
+
+pelo menos 1 número
+
+pelo menos 1 símbolo (não letra nem número)
+
+Questão 12 – Contador de vogais e consoantes
+Peça um texto e conte quantas vogais e consoantes ele tem (ignorando espaços e símbolos).
+
+Questão 13 – Sistema de login com 3 tentativas
+Usuário tem 3 tentativas para acertar login (usuário = "admin", senha = "1234"). Use .lower() para o usuário.
+
+Questão 14 – Censor de palavras proibidas
+Peça um texto e substitua todas as palavras proibidas (ex: "spoiler", "segredo") por "***".
+
+Questão 15 – Inversor de frase
+Peça uma frase, inverta a ordem das palavras (sem usar for ou split).
+
+Questão 16 – Checador de palíndromos
+Peça uma palavra ou frase, remova espaços e veja se é palíndromo (lê igual ao contrário).
+
+Questão 17 – Extrator de números
+Peça um texto e extraia só os números, mostrando-os em sequência.
+
+Questão 18 – Verificador simples de e-mail
+Peça um e-mail e valide se: contém "@" e ".", não começa/termina com eles, e não tem espaços.
+
+Questão 19 – Menu interativo
+Menu que:
+
+Texto para maiúsculas
+
+Texto para minúsculas
+
+Conta quantas vezes uma letra aparece no texto
+
+Sair
+
+Questão 20 – Nome formatado
+Peça nome completo, formate para que só a primeira letra de cada palavra seja maiúscula, e o último sobrenome seja todo maiúsculo.
+
