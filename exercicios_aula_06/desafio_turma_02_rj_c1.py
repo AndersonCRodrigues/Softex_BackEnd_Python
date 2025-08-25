@@ -35,33 +35,35 @@ while True:
         break
 
     while True:
-        opcao = input("Escolha uma opção:\n" \
-        "1- Ver saldo.\n" \
-        "2- Sacar valor.\n" \
-        "3- Depositar.\n" \
-        "4- Pagar Boleto.\n" \
-        "5- Alterar senha.\n" \
-        "6- Sair.\n")
+        opcao = input(
+            "Escolha uma opção:\n"
+            "1- Ver saldo.\n"
+            "2- Sacar valor.\n"
+            "3- Depositar.\n"
+            "4- Pagar Boleto.\n"
+            "5- Alterar senha.\n"
+            "6- Sair.\n"
+        )
 
         if opcao == "1":
             print(f"Seu saldo atual é de {saldo_atual}.")
         elif opcao == "2":
             valor_a_sacar = float(input("Entre com o valor a ser sacado: "))
             if valor_a_sacar <= (saldo_atual + limite_saldo_negativo):
-                saldo -= valor_a_sacar
+                saldo_atual -= valor_a_sacar
                 print("Saldo liberado, retire seu valor!")
             else:
                 print("Saldo insuficiente!")
         elif opcao == "3":
             depositar = float(input("Insira o valor a ser depositado: "))
             if depositar > 0:
-                saldo += depositar
+                saldo_atual += depositar
             else:
                 print("Valor inválido!")
         elif opcao == "4":
             boleto = float(input("Entre com o valor do boleto"))
             if boleto < (saldo_atual + limite_saldo_negativo):
-                saldo -= boleto
+                saldo_atual -= boleto
             else:
                 print("Saldo insuficiente!")
         elif opcao == "5":
