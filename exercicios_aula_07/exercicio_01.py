@@ -13,4 +13,4 @@ cupom = input("Digite seu cupom de desconto: ")
 if cupom == cupom_desconto:
     print(f"Seu lanche custou {valor_hamburguer * 0.9}")
 else:
-        print(f"Seu lanche custou {valor_hamburguer}")
+    print(f"Seu lanche custou {valor_hamburguer}")
