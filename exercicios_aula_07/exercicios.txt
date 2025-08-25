@@ -1,0 +1,17 @@
+Exercício 3: Menu de Comandos para um Robô
+
+Crie um programa que simula o controle de um robô simples com um menu de 
+comandos.
+O robô pode estar em uma posição inicial (você pode usar uma variável 
+para isso, por exemplo, a posição 0).
+O programa deve exibir um menu com as seguintes opções: 1 - Avançar, 
+2 - Recuar, 3 - Status, 4 - Desligar.
+Peça ao usuário para escolher um comando.
+Com base na escolha, execute a ação correspondente:
+Avançar: Adicione um valor à posição do robô.
+Recuar: Subtraia um valor da posição do robô.
+Status: Mostre a posição atual do robô.
+Desligar: Encerre o programa.
+O menu deve continuar aparecendo após cada comando, até que o usuário 
+escolha a opção "Desligar".
+Se o usuário digitar um comando inválido, exiba uma mensagem de erro.
