@@ -33,3 +33,6 @@ for caractere in frase_codificada:
         frase_decodificada += caractere
 
 print("Decodificada:", frase_decodificada)
+
+codificada = frase_original.lower().replace("a","1").replace("e","2").replace("i","3").replace("o","4").replace("u","5")
+print("CODIFICADA COM REPLACE: ",codificada)
