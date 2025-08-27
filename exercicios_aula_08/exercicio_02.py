@@ -1,7 +1,8 @@
 numeros = input("Digite o número de telefone com 11 dígitos: ")
+numeros = numeros.replace("-","").replace("(", "").replace(")","")
 
 if len(numeros) != 11:
-    print("Array com tamanho incorreto.")
+    print("Número com tamanho incorreto.")
 elif not numeros.isdigit():
     print("não é possível gerar um número de telefone com esses valores")
 else:
