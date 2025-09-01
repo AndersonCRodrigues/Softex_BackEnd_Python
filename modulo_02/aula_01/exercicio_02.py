@@ -1,3 +1,4 @@
+# exercicio 02
 lista1 = ["vermelho", "azul", "verde", "amarelo"]
 lista2 = ["verde", "roxo", "azul", "preto"]
 elementos_comuns = []
