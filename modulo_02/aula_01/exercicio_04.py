@@ -1,3 +1,4 @@
+# exercicio 04
 dados_validos = []
 soma_total = 0
 
