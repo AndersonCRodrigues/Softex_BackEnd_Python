@@ -14,11 +14,14 @@ while True:
                     print("Tipo: Triângulo Isósceles.")
                 else:
                     print("Tipo: Triângulo Escaleno.")
-                break 
+                break
             else:
                 print("Erro: os valores não podem formar um triângulo.\n")
         else:
             print("Erro: os lados devem ser maiores que zero.\n")
 
     except ValueError:
-        print("Erro: entrada inválida! Digite apenas números (inteiros ou decimais).\n")
+        print(
+            "Erro: \n"
+            "entrada inválida! Digite apenas números (inteiros ou decimais).\n"
+        )
