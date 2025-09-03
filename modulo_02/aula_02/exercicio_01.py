@@ -6,17 +6,17 @@ vendas = [
     ("Webcam", 75.20, 2),
 ]
 
-vendas_filtradas = []
+vendas_filtradas = list()
 produtos_unicos = set()
 
 for produto, valor, quantidade in vendas:
     valor_total = valor * quantidade
-    if valor_total > 100:
+    if valor_total >= 100:
         vendas_filtradas.append((produto, valor, quantidade))
 
     produtos_unicos.add(produto)
 
-print("Vendas filtradas (valor total > 100):")
+print("Vendas filtradas (valor total >= 100):")
 print(vendas_filtradas)
 print("\nProdutos únicos:")
 print(produtos_unicos)
