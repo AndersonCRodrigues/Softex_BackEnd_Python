@@ -5,9 +5,9 @@ vendas = [
     ("Fone", 45, 1),
     ("Webcam", 75.20, 2),
 ]
-
-vendas_filtradas = list()
-produtos_unicos = set()
+ 
+vendas_filtradas = list() # []
+produtos_unicos = set() # {1,2,3}
 
 for produto, valor, quantidade in vendas:
     valor_total = valor * quantidade
