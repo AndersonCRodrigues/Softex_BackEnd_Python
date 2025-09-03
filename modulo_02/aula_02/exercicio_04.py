@@ -21,5 +21,11 @@ for aluno, nota in notas:
 alunos_maior_nota = tuple(alunos_maior_nota)
 print(f"\nAlunos que tiraram a maior nota: {alunos_maior_nota}")
 
-alunos_nota_baixa = {aluno for aluno, nota in notas if nota < 7.0}
+# alunos_nota_baixa = {aluno for aluno, nota in notas if nota < 7.0}
+
+alunos_nota_baixa = set()
+for aluno, nota in notas:
+    if nota < 7.0:
+        alunos_nota_baixa.add(aluno)
+
 print(f"\nAlunos que tiveram nota menor que 7.0: {alunos_nota_baixa}")
