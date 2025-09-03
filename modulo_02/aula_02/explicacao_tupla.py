@@ -13,8 +13,8 @@ print(f"lista {lista}")
 
 pessoas = [("Ana", 25), ("Bruno", 30), ("Carlos", 28),]
 
-# for nome, idade in pessoas:
-#     print(f"{nome} tem {idade} anos.")
+for nome, idade in pessoas:
+    print(f"{nome} tem {idade} anos.")
 
-for item in pessoas:
-    print(item)
+# for item in pessoas:
+#     print(item)
