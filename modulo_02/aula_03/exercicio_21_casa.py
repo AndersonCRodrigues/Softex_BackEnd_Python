@@ -14,7 +14,5 @@ while True:
     elif opcao == "3":
         print("Encerrando Programa!")
         break
-    elif opcao == "4":
-        print(contatos)
     else:
         print("Opção inválida")
