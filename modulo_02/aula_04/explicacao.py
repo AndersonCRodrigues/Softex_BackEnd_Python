@@ -4,4 +4,4 @@ def exibir_pedido(item: str, *extras: str, **observacoes: str) -> None:
     print(f"Observações: {observacoes}")
 
 
-exibir_pedido("Pizza", "Queijo extra", "Bacon", borda="recheada")
+exibir_pedido( "Queijo extra","Bacon","Pizza", borda="recheada", ingrediente="tomate")
