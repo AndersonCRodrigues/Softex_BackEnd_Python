@@ -6,6 +6,7 @@ a contagem de vogais e a contagem de consoantes.
 
 
 def conta_vogais(texto: str) -> int:
+    """Conta o número de vogais de um texto"""
     vogais = "aeiou"
     contador = 0
 
@@ -17,6 +18,7 @@ def conta_vogais(texto: str) -> int:
 
 
 def conta_consoantes(texto: str) -> int:
+    """Conta o número de consoantes de um texto"""
     vogais = "aeiou"
     contador = 0
 
@@ -33,6 +35,7 @@ def conta_consoantes(texto: str) -> int:
 
 
 def conta_palavras(texto: str) -> int:
+    """Conta o número de palavras de um texto"""
     texto_lista = texto.split(" ")
     print(f"Texto em lista {texto_lista}")
     return len(texto_lista)
@@ -48,6 +51,10 @@ def conta_palavras(texto: str) -> int:
 
 
 def texto_dicionario(texto: str) -> dict:
+    """
+        Tranforma o dados do texto em um dicionario
+        de vogais, consoantes e palavras
+    """
     total_vogais = conta_vogais(texto)
     total_consoante = conta_consoantes(texto)
     total_palavras = conta_palavras(texto)
