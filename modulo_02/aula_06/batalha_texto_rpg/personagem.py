@@ -1,4 +1,5 @@
 import random
+# from random import random
 
 
 class Personagem:
