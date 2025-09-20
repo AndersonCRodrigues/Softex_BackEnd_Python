@@ -9,5 +9,11 @@ class Filme:
         return f"Filme: '{self.titulo}' ({self.ano}) - Diretor: {self.diretor}"
 
 
-filme1 = Filme("Titanic", "Anderson", 1999)
+filme1 = Filme("De Volta para o Futuro", "Robert Zemeckis", 1985)
 print(filme1)
+
+
+bonus = 1.10
+salario = 100
+salario_com_bonus = salario * bonus
+print(salario_com_bonus)
