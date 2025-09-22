@@ -35,7 +35,7 @@ class Circulo:
         area = pi * self.raio ** 2
         print(area)
     
-roda = Circulo(-2)
+roda = Circulo(2)
 print(roda.raio)
-roda.raio = -3
+roda.raio = 3
 roda.calcular_area()

@@ -19,5 +19,6 @@ class Produto:
     
 caneta = Produto("Caneta Azul", 10)
 print(caneta.preco)
-caneta.preco = -10
+caneta.preco = -20
+print(caneta.preco)
 
