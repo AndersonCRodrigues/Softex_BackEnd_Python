@@ -14,15 +14,21 @@ valor vazio e idade para um valor negativo para testar as validações.
 
 class Pessoa:
     def __init__(self, nome:str, idade:int):
-        self._nome = nome
-        self._idade = idade
+        if nome and isinstance(nome, str):
+            self._nome = nome
+        else:
+            self._nome = "Não definido"
+        if idade > 0 and isinstance(idade, int):
+            self._idade = idade
+        else:
+            self._idade = "Desconhecida"
 
-    @property
-    def nome(self):
+    @property # me devolve o valor do atributo protegido
+    def nome(self): # nome do getter
         return self._nome
     
-    @nome.setter
-    def nome(self, novo_nome: str):
+    @nome.setter # pode alterar o valor do atributo protegido
+    def nome(self, novo_nome: str): # nome do setter == nome do getter
         # isisntance verifica se o primeiro parametro é do tipo do segundo
         if isinstance(novo_nome, str) and novo_nome:
             self._nome = novo_nome
@@ -41,9 +47,9 @@ class Pessoa:
         else:
             print("Erro! Nova idade deve ser um inteiro positivo!")
 
-nova_pessoa = Pessoa("Anderson", 42)
+nova_pessoa = Pessoa("", -42)
 print(nova_pessoa.nome)
-# nova_pessoa.nome = "Pedro"
-# print(nova_pessoa.nome)
-# nova_pessoa.idade = "40"
+nova_pessoa.nome = "Pedro"
+print(nova_pessoa.nome)
+nova_pessoa.idade = 40
 print(nova_pessoa.idade)
