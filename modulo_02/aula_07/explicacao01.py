@@ -3,8 +3,9 @@ class User:
         self.nome = nome
 
     def __str__(self):
-        return self.nome
+        return f"seu nome é {self.nome}"
     
 animal =  User("Rex")
 print(animal.nome)
-print(animal)
+texto = animal
+print(texto)
