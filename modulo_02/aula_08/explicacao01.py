@@ -4,7 +4,7 @@ class Animal:
         self.idade = idade
 
     def fazer_som(self):
-        pass
+        print("método da classe super")
 
 class Cachorro(Animal):
     def __init__(self, nome, idade, raca):

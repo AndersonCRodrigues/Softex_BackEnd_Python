@@ -18,7 +18,7 @@ class Estudante(Pessoa):
 pessoa = Pessoa("Luzia", 64)
 estudante = Estudante("João", 33, "Gestão de Software")
 
-lista_objetos:list[Pessoa]= [pessoa, estudante]
+lista_objetos:list[Pessoa] = [pessoa, estudante]
 
 for objeto in lista_objetos:
     objeto.apresentar()

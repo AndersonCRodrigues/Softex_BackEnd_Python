@@ -29,12 +29,13 @@ class Video(Midia):
 m1 = Musica("Lalala", 30, "Zé")
 v1 = Video("Toc-toc", 60, "1600x1200")
 
-dicionarios_mida = {"musicas":[], "videos":[]}
-dicionarios_mida["musicas"].append(m1)
-dicionarios_mida["videos"].append(v1)
+dicionarios_midia:dict[str, list[Midia]] = {"musicas":[], "videos":[]}
+dicionarios_midia["musicas"].append(m1)
+dicionarios_midia["videos"].append(v1)
 
-print(dicionarios_mida)
+# print(dicionarios_midia)
 
-for item in dicionarios_mida.values():
+for item in dicionarios_midia.values():
+    # print(item)
     for midia in item:
         midia.exibir()
