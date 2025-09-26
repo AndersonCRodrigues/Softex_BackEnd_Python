@@ -1,9 +1,15 @@
-def calc(num_1: float, num_2: float) -> tuple[float, float]:
-    div = num_1 / num_2
-    mult = num_1 * num_2
-    return div, mult
+"""
+    Nível Médio/Avançado: Hierarquia de Formas Geométricas
 
-
-resposta1, resposta2 = calc(2.5, 5.2)
-print(f"{resposta1:.3f}")
-print(resposta2)
+Crie uma classe base FormaGeometrica com um construtor para cor e um método
+calcular_area() que não faz nada.
+Crie uma classe Retangulo que herda de FormaGeometrica e tem atributos para largura e
+altura. A classe deve sobrescrever o método calcular_area().
+Crie uma classe Quadrado que herda de Retangulo. O construtor deve receber apenas o lado
+e passar esse mesmo valor para largura e altura da classe pai. O encapsulamento deve ser
+aplicado aos atributos de dimensão.
+No script principal, crie uma tupla com um objeto de Retangulo e um objeto de Quadrado.
+Crie uma função chamada calcular_soma_areas() que recebe essa tupla, itera sobre ela e
+soma a área de todas as formas. A função deve chamar o método calcular_area() de forma
+polimórfica para cada objeto, exibindo a soma total no final.
+"""
