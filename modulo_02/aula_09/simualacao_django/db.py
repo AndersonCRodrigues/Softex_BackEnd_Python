@@ -1,17 +1,9 @@
 import random
 from typing import Dict
+from Usuarios import Usuario
+from Postagem import Postagem
 
 
-# Definição da classe Usuario
-class Usuario:
-    nome: str
-    __email: str
-
-
-class Postagem:
-    titulo: str
-    conteudo: str
-    autor: Usuario
 
 
 # Dicionários que funcionam como um banco de dados
