@@ -1,4 +1,4 @@
-from .Model import Model
+from Model import Model
 
 
 class Usuario(Model):

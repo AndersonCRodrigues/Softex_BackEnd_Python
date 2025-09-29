@@ -1,6 +1,6 @@
-from .Usuarios import Usuario
-from .Postagem import Postagem
-from .db import db_usuarios, db_postagens, gerar_id_aleatorio
+from Usuarios import Usuario
+from Postagem import Postagem
+from db import db_usuarios, db_postagens, gerar_id_aleatorio
 
 
 class UsuarioService:
@@ -16,7 +16,12 @@ class UsuarioService:
         return usuario
 
     def get_usuario(self, id_: int) -> Usuario | None:
-        return db_usuarios.get(id_)
+        # retorna o valor da chave id_ se existir no dicionaio
+        return db_usuarios.get(id_) # db_usuarios[id_] -> pode dar erro
+    
+
+    # desafios: pegar usuario por nome e email
+    # desafio2: listar todos usuarios (lista)
 
 
 class PostagemService:
@@ -37,3 +42,6 @@ class PostagemService:
 
     def get_postagem(self, id_: int) -> Postagem | None:
         return db_postagens.get(id_)
+    
+    # desafios pegar postagem por id, nome do usuario
+    # criar mais postagens de um usuarioa e voltar uma lista

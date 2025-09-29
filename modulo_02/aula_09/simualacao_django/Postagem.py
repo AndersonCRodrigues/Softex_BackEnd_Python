@@ -1,5 +1,5 @@
-from .Model import Model
-from .Usuarios import Usuario
+from Model import Model
+from Usuarios import Usuario
 
 
 class Postagem(Model):

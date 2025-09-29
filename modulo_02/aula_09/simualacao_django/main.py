@@ -1,7 +1,7 @@
-from .services import UsuarioService, PostagemService
-from .Usuarios import Usuario
-from .Postagem import Postagem
-from .db import db_usuarios, db_postagens
+from services import UsuarioService, PostagemService
+from Usuarios import Usuario
+from Postagem import Postagem
+from db import db_usuarios, db_postagens
 
 if __name__ == "__main__":
     # Instanciando (criando objetos) os serviços.
