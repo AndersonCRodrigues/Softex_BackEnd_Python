@@ -1,0 +1,7 @@
+Crie duas tabelas no seu banco: (usuarios e postagens)
+usuarios terá atributos (colunas): id, primeiro_nome, sobrenome, email e senha
+postagens terá atributos (colunas): id, titulo, postagem e id_autor
+
+o id_autor séra um id existente de usuarios
+
+faça 5 inserções de valores em cada tabela
