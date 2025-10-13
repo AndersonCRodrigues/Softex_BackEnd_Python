@@ -1,5 +1,4 @@
-# main.py
-from models import UserModel
+from user_model import UserModel
 
 
 def display_menu():
