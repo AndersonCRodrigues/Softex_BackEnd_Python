@@ -71,7 +71,6 @@ class UserModel:
         updates.append("data_atualizacao = ?")
         params.append(datetime.now())
         params.append(user_id)
-
         query = f"UPDATE usuarios SET {', '.join(updates)} WHERE id = ?;"
 
         self.db_conn.cursor.execute(query, params)
