@@ -6,8 +6,8 @@ from database import DatabaseConnection
 class UserModel:
     """Gerencia a tabela 'usuarios' e todas as operações de CRUD."""
 
-    def __init__(self, db_conn: DatabaseConnection):
-        self.db_conn = db_conn
+    def __init__(self):
+        self.db_conn = DatabaseConnection()
         self._create_table()
 
     def _create_table(self):
