@@ -1,5 +1,4 @@
 # main.py
-from database import DatabaseConnection
 from models import UserModel
 
 
@@ -17,8 +16,7 @@ def display_menu():
 
 def main():
     """Função principal do programa."""
-    db_conn = DatabaseConnection()
-    user_model = UserModel(db_conn)
+    user_model = UserModel()
 
     while True:
         display_menu()
