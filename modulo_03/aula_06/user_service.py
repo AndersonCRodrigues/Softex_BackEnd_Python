@@ -9,13 +9,25 @@ class UserService:
         """
         crie um atributo que receberá a UserModel como composição
         """
+        self.user_model = UserModel()
 
     def _safe_user_data(self, user) -> dict | None:
         """
         este é um método privado que recebe um usuarios do banco.
         verifique se o usuários existe e então retorne ele sem a sua senha
         caso ele ão exista retorne None
-        """
+         """
+        if user:
+            return {
+                'id': user['id'],
+                'email':user['email'],
+                'nome_completo':user['nome_completo'],
+                'perfil_acesso': user['perfil_acesso'],
+                'data_criacao':user['data_criacao'],
+                'data_atualizacao':user['data_atualizacao']
+            } 
+        else:
+            return None
 
     def _is_authorized(
         self,
@@ -30,6 +42,14 @@ class UserService:
         Se  action == "edit_self" retorne current_user_id == target_user_id
         No geral retorn false
         """
+        if current_user_profile == 'Diretoria':
+            return True
+        if not target_user_id:
+            return False
+        if action == "edit_self":
+            return current_user_id == target_user_id
+        return False
+    
 
     def register_user(
         self,
@@ -45,6 +65,8 @@ class UserService:
         O campo Nome deve ter apenas letras e não deve estar vazio, retorne False se não tiver e a mensagem de erro.
         Caso os campos atendas as requisições, faça o hash da senha e salve use o método create_user da User Model
         """
+        senha_hash = hash_senha(senha)
+        return self.user_model.create_user(senha_hash, email, nome_completo, perfil)
 
     def login_user(self, email: str, senha: str) -> tuple[dict | None, str]:
         """
@@ -70,7 +92,18 @@ class UserService:
         Caso não haja nenhum valor a ser atualizado, encerre a função com False e mensagem de erro.
         Caso contrátio, chame o método da UserModel update_user_by_id passando o id e o new data
         """
+        if not self._is_authorized(current_user_id, current_user_profile, target_user_id):
+            return  False, "Acesso Negado!"
+        
+        update_data = {}
 
+        if new_data.get('senha'):
+            update_data['senha'] = hash_senha(new_data['senha'])
+
+        if update_data:
+            return self.user_model.update_user_by_id(target_user_id, update_data)
+        return False, "Nada para atualizar"
+    
     def delete_user(
         self,
         current_user_profile: str,
