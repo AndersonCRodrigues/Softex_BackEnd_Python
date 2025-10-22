@@ -133,7 +133,7 @@ class UserModel:
             self.db_conn.close()
             return False, f"Erro desconhecido: {e}"
 
-    def delete_user_by_id(self, user_id: int) -> Tuple[bool, str]:
+    def delete_user_by_id(self, user_id: int) -> tuple[bool, str]:
         """Deleta um usuário pelo ID."""
         self.db_conn.connect()
         self.db_conn.cursor.execute("DELETE FROM usuarios WHERE id = ?;", (user_id,))
