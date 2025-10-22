@@ -1,4 +1,4 @@
-from database import DatabaseConnection
+from modulo_03.aula_06.database import DatabaseConnection
 from student_model import StudentModel
 from course_model import CourseModel
 from enrollment_model import EnrollmentModel

@@ -1,4 +1,4 @@
-from database import DatabaseConnection
+from modulo_03.aula_06.database import DatabaseConnection
 import sqlite3
 
 

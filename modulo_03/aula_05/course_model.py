@@ -1,5 +1,5 @@
 import sqlite3
-from database import DatabaseConnection
+from modulo_03.aula_06.database import DatabaseConnection
 
 
 class CourseModel:
