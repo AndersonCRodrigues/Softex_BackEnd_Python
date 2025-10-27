@@ -9,3 +9,4 @@ def processar_lista(lista):
     if not lista: 
         raise ValueError("Lista não pode ser vazia.") 
     return sorted(lista)  
+
