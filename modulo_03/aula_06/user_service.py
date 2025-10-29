@@ -11,30 +11,20 @@ class UserService:
         """
         self.user_model = UserModel()
 
-    def _safe_user_data(self, user) -> dict | None:
+    def _safe_user_data(self, user: dict) -> dict | None:
         """
         este é um método privado que recebe um usuarios do banco.
         verifique se o usuários existe e então retorne ele sem a sua senha
         caso ele ão exista retorne None
-         """
-        if user:
-            return {
-                'id': user['id'],
-                'email':user['email'],
-                'nome_completo':user['nome_completo'],
-                'perfil_acesso': user['perfil_acesso'],
-                'data_criacao':user['data_criacao'],
-                'data_atualizacao':user['data_atualizacao']
-            } 
-        else:
-            return None
+        """
+        return user.pop("senha_hash", None) if user else None
 
     def _is_authorized(
         self,
         current_user_id: int | None,
         current_user_profile: str,
         target_user_id: int,
-        action: str,
+        action: str = "edit_self",
     ) -> bool:
         """
         Método que verifica o perfil do usuários, se for Diretoria retorne true
@@ -42,14 +32,13 @@ class UserService:
         Se  action == "edit_self" retorne current_user_id == target_user_id
         No geral retorn false
         """
-        if current_user_profile == 'Diretoria':
+        if current_user_profile == "Diretoria":
             return True
         if not target_user_id:
             return False
         if action == "edit_self":
             return current_user_id == target_user_id
         return False
-    
 
     def register_user(
         self,
@@ -65,6 +54,13 @@ class UserService:
         O campo Nome deve ter apenas letras e não deve estar vazio, retorne False se não tiver e a mensagem de erro.
         Caso os campos atendas as requisições, faça o hash da senha e salve use o método create_user da User Model
         """
+        if not email or len(email) < 10 or "@" not in email:
+            return False, "Erro: Email inválido!"
+        if not nome_completo and not nome_completo.isalpha():
+            return False, "Erro: Nome completo deve conter apenas letras."
+        if not senha or len(senha) < 8:
+            return False, "Erros: senha inválida."
+
         senha_hash = hash_senha(senha)
         return self.user_model.create_user(senha_hash, email, nome_completo, perfil)
 
@@ -92,18 +88,20 @@ class UserService:
         Caso não haja nenhum valor a ser atualizado, encerre a função com False e mensagem de erro.
         Caso contrátio, chame o método da UserModel update_user_by_id passando o id e o new data
         """
-        if not self._is_authorized(current_user_id, current_user_profile, target_user_id):
-            return  False, "Acesso Negado!"
-        
+        if not self._is_authorized(
+            current_user_id, current_user_profile, target_user_id
+        ):
+            return False, "Acesso Negado!"
+
         update_data = {}
 
-        if new_data.get('senha'):
-            update_data['senha'] = hash_senha(new_data['senha'])
+        if new_data.get("senha"):
+            update_data["senha"] = hash_senha(new_data["senha"])
 
         if update_data:
             return self.user_model.update_user_by_id(target_user_id, update_data)
         return False, "Nada para atualizar"
-    
+
     def delete_user(
         self,
         current_user_profile: str,
