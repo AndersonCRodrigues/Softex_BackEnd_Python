@@ -47,5 +47,5 @@ class GerenciadorTarefas:
 
 # conn = ConexaoDB("banco.db")
 # gerente = GerenciadorTarefas(conn)
-# # gerente.adicionar_tarefa("tarefa de uso de desenvolvimento/produção")
+# gerente.adicionar_tarefa("tarefa de uso de desenvolvimento/produção")
 # print(gerente.contar_tarefas())
