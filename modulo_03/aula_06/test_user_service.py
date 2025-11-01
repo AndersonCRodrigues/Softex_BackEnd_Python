@@ -2,7 +2,7 @@ import pytest
 from user_service import UserService
 
 
-@pytest.fixture
+@pytest.fixture(autouse=True)
 def mock_hasher(mocker):
     mocker.patch("user_service.hash_senha", side_effect=lambda s: f"HASHED_{s}")
     mocker.patch(

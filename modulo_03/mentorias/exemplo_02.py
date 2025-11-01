@@ -13,7 +13,7 @@ def soma(lista):
     soma_maxima_local = lista[0]
 
     for num in lista[1:]:
-        soma_maxima_local = max(num, soma_maxima_global + num)
+        soma_maxima_local = max(num, soma_maxima_local + num)
         soma_maxima_global = max(soma_maxima_global, soma_maxima_local)
 
     return soma_maxima_global
