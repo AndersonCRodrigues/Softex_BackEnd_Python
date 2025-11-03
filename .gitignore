@@ -2,3 +2,5 @@ __pycache__
 .vscode
 *.db
 .venv
+venv
+*.sqlite3
