@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}
+  Página Inicial - Meu Site
+{% endblock %}
+{% block content %}
+  <h1>Olá, {{ nome_usuario }}!</h1>
+  <p>Este HTML está separado do meu código Python.</p>
+  <h3>Tecnologias que estou aprendendo:</h3>
+  <ul>
+    {% for tec in tecnologias %}
+      <li>{{ tec }}</li>
+    {% endfor %}
+  </ul>
+  {% if nome_usuario == 'Júnior' %}
+    <p>Este é um conteúdo especial para o Júnior!</p>
+  {% endif %}
+{% endblock %}
