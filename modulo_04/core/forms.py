@@ -6,4 +6,4 @@ class TarefaForm(forms.ModelForm):
     class Meta:
     # 1. Diga ao form qual Model ele deve usar
         model = Tarefa
-        fields = ['titulo']
+        fields = ['titulo',]
