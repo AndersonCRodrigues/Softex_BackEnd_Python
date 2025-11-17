@@ -30,7 +30,7 @@
       <li style="margin-bottom: 15px; border: 1px solid #ccc; padding: 10px;">
         {{ tarefa.titulo }}
         {% if tarefa.concluida %}
-          <strong style="color: green;">(✓ Concluída)</strong>
+          <strong style="color: green;">(✔ Concluída)</strong>
         {% else %}
           <strong style="color: orange;">(☐ Pendente)</strong>
         {% endif %}
@@ -46,6 +46,13 @@
 inline;">
               {% csrf_token %}
               <button type="submit">Marcar como Concluída</button>
+            </form>
+          {% endif %}
+          {% if tarefa.concluida %}
+            <form action="{% url 'concluir_tarefa' tarefa.pk %}" method="POST" style="display:
+inline;">
+              {% csrf_token %}
+              <button type="submit">Marcar como Pendente</button>
             </form>
           {% endif %}
         </div>

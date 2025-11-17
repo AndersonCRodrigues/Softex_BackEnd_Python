@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+
 from django.http import HttpResponse
 from .models import Tarefa
 from .forms import TarefaForm
@@ -32,12 +33,15 @@ def login(request):
 def concluir_tarefa(request, pk):
     tarefa = get_object_or_404(Tarefa, pk=pk)
     if request.method == 'POST':
-        tarefa.concluida = True
-        tarefa.save() 
+        tarefa.concluida = not tarefa.concluida
+        tarefa.save()
     return redirect('home')
 
 def deletar_tarefa(request, pk):
+
     tarefa = get_object_or_404(Tarefa, pk=pk)
     if request.method == 'POST':
         tarefa.delete()
     return redirect('home')
+
+
