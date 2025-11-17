@@ -25,17 +25,30 @@
 
   <hr />
   <h2>Minha Lista de Tarefas (do Banco de Dados):</h2>
-  <ul>
+  <ul style="list-style: none; padding: 0;">
     {% for tarefa in tarefas %}
-      <li>
+      <li style="margin-bottom: 15px; border: 1px solid #ccc; padding: 10px;">
         {{ tarefa.titulo }}
         {% if tarefa.concluida %}
-          (✓ Concluída)
+          <strong style="color: green;">(✓ Concluída)</strong>
         {% else %}
-          (☐ Pendente)
+          <strong style="color: orange;">(☐ Pendente)</strong>
         {% endif %}
         <br />
-        <small>Criada em: {{ tarefa.criada_em }}</small>
+        <small>Criada em: {{ tarefa.criada_em|date:'d/m/Y H:i' }}</small> <div style="margin-top:
+10px;">
+          <form action="{% url 'deletar_tarefa' tarefa.pk %}" method="POST" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit">Deletar</button>
+          </form>
+          {% if not tarefa.concluida %}
+            <form action="{% url 'concluir_tarefa' tarefa.pk %}" method="POST" style="display:
+inline;">
+              {% csrf_token %}
+              <button type="submit">Marcar como Concluída</button>
+            </form>
+          {% endif %}
+        </div>
       </li>
     {% empty %}
       <li>Você ainda não tem tarefas cadastradas.</li>
