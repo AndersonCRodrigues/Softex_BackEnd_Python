@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}
+  Login
+{% endblock %}
+{% block content %}
+  <h2>Login</h2>
+  {% if form.errors %}
+    <p style="color: red;">Seu usuário ou senha estão incorretos. Tente novamente.</p>
+  {% endif %}
+  <form method="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Entrar</button>
+  </form>
+  <p>
+    <a href="{% url 'register' %}">Não tem uma conta? Cadastre-se</a>
+  </p>
+{% endblock %}

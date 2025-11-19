@@ -8,12 +8,23 @@
       {% block title %}
         Meu Site Django
       {% endblock %}
-    </title> <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   </head>
   <body>
     <header>
       <nav>
-        <a href="/">Home</a> |
+        <a href="{% url 'home' %}">Home</a> |
+        {% if user.is_authenticated %}
+          <span>Olá, {{ user.username }}!</span> |<form action="{% url 'logout' %}" method="POST" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit" style="background:none; border:none;
+padding:0; color:blue; text-decoration:underline; cursor:pointer;">Sair (Logout)</button>
+          </form>
+        {% else %}
+          <a href="{% url 'login' %}">Entrar (Login)</a> |
+          <a href="{% url 'register' %}">Cadastre-se</a>
+        {% endif %}
       </nav>
     </header>
     <main>
