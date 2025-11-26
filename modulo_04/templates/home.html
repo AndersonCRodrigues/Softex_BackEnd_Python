@@ -14,11 +14,6 @@
   <hr />
   <p>Este HTML está separado do meu código Python.</p>
   <h3>Tecnologias que estou aprendendo:</h3>
-  <ul>
-    {% for tec in tecnologias %}
-      <li>{{ tec }}</li>
-    {% endfor %}
-  </ul>
   {% if nome_usuario == 'Júnior' %}
     <p>Este é um conteúdo especial para o Júnior!</p>
   {% endif %}
@@ -28,6 +23,10 @@
   <ul style="list-style: none; padding: 0;">
     {% for tarefa in tarefas %}
       <li style="margin-bottom: 15px; border: 1px solid #ccc; padding: 10px;">
+        
+        <small style="font-weight: bold; color: #555;">Projeto: {{ tarefa.project.titulo }}</small>
+        <br />
+
         {{ tarefa.titulo }}
         {% if tarefa.concluida %}
           <strong style="color: green;">(✔ Concluída)</strong>
