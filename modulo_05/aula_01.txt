@@ -1,0 +1,6 @@
+criando branch:
+- git checkout -b [nome da sua branch de trabalho]
+- git checkout -b anderson_rodrigues
+
+crie um arquivo chamado teste.txt (tudo em minusculo)
+crie seu pull request
