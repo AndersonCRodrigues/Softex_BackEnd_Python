@@ -4,3 +4,26 @@ criando branch:
 
 crie um arquivo chamado teste.txt (tudo em minusculo)
 crie seu pull request
+
+git pull origin main
+git pull origin main --allow-unrelated-histories
+
+
+
+SEMPRE A PARTIR DA MAIN!!!!
+
+feat/oque-estou-criando
+fix/oque-estou-corrigindo
+bug/correção-bug
+test/escrevendo-teste
+doc/documentação-readme
+
+feat/iniciando-django
+
+.gitignore 
+.venv
+venv
+__pycache__
+*.cache
+*.sqlite3
+*.sqlite
