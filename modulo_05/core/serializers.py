@@ -2,10 +2,19 @@ from rest_framework import serializers
 from .models import Tarefa
 
 class TarefaSerializer(serializers.ModelSerializer):
+    titulo = serializers.CharField(
+        max_length=200,
+        error_messages={
+            'required': 'O título é obrigatório.',
+            'blank': 'O título não pode ser vazio.',
+            'max_length': 'O título não pode ter mais de 200 caracteres.'
+            }
+        )
     class Meta:
         model = Tarefa
         fields = ['id', 'user', 'titulo', 'concluida', 'criada_em']
         read_only_fields = ['id', 'criada_em']
+        
 
     def validate_titulo(self, value):
         """
@@ -28,4 +37,6 @@ class TarefaSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError(
                 "O título não pode conter apenas números."
             )
+
+        
         return value
