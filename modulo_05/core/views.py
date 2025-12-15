@@ -6,11 +6,16 @@ from .serializers import TarefaSerializer
 from django.db import IntegrityError
 import logging
 from django.shortcuts import get_object_or_404 
+from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.tokens import RefreshToken
+
 
 logger = logging.getLogger(__name__)
 
 
 class ListaTarefasAPIView(APIView):
+
+    permission_classes = [IsAuthenticated]
 
     def get(self, request, format=None):
         tarefas = Tarefa.objects.all()
@@ -23,7 +28,7 @@ class ListaTarefasAPIView(APIView):
             serializer = TarefaSerializer(data=request.data)
             
             if serializer.is_valid():
-                serializer.save()
+                serializer.save(user=self.request.user)
                 logger.info(f"[INFO]: Tarefa criada: {serializer.data['id']}")
                 return Response(
                     serializer.data,
@@ -50,6 +55,7 @@ class ListaTarefasAPIView(APIView):
 
 
 class DetalheTarefaAPIView(APIView): 
+
     def get_object(self, pk): 
         return get_object_or_404(Tarefa, pk=pk)
     
@@ -90,3 +96,30 @@ class DetalheTarefaAPIView(APIView):
         tarefa = self.get_object(pk) 
         tarefa.delete() 
         return Response(status=status.HTTP_204_NO_CONTENT)
+    
+
+class MinhaView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+         return Response(f"Usuário autenticado: {request.user.username}", 
+                        status=status.HTTP_200_OK,
+                        )
+    
+class LogoutView(APIView):
+    permission_classes = [IsAuthenticated]
+    
+    def post(self, request):
+        try:
+            refresh_token = request.data.get("refresh")
+            token = RefreshToken(refresh_token)
+            token.blacklist()
+            return Response(
+                {"detail": "Logout realizado com sucesso."},
+                status=status.HTTP_205_RESET_CONTENT,
+            )
+        except Exception:
+            return Response(
+            {"detail": "Token inválido."},
+            status=status.HTTP_400_BAD_REQUEST
+        )
