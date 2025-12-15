@@ -10,10 +10,12 @@ class TarefaSerializer(serializers.ModelSerializer):
             'max_length': 'O título não pode ter mais de 200 caracteres.'
             }
         )
+    
+    user = serializers.StringRelatedField(read_only=True)
     class Meta:
         model = Tarefa
         fields = ['id', 'user', 'titulo', 'concluida', 'criada_em']
-        read_only_fields = ['id', 'criada_em']
+        read_only_fields = ['id', 'user', 'criada_em']
         
 
     def validate_titulo(self, value):
